@@ -33,6 +33,66 @@ interface SalesRepData {
     [territoryName: string]: SalesRepInfo;
 }
 
+// State Abbreviations
+const stateAbbreviations: { [stateName: string]: string } = {
+    "California North": "CA(N)",
+    "California South": "CA(S)",
+    "New York North": "NY(N)",
+    "New York South": "NY(S)",
+    "Ohio": "OH",
+    "Maine": "ME",
+    "Washington": "WA",
+    "Oregon": "OR",
+    "Idaho": "ID",
+    "Montana": "MT",
+    "Alaska": "AK",
+    "Utah": "UT",
+    "Colorado": "CO",
+    "New Mexico": "NM",
+    "Wyoming": "WY",
+    "Nebraska": "NE",
+    "Kansas": "KS",
+    "Arizona": "AZ",
+    "Nevada East": "NV(E)",
+    "Nevada West": "NV(W)",
+    "Hawaii": "HI",
+    "Texas North": "TX(N)",
+    "Texas South": "TX(S)",
+    "Louisiana": "LA",
+    "Arkansas": "AR",
+    "Oklahoma": "OK",
+    "Missouri": "MO",
+    "North Dakota": "ND",
+    "South Dakota": "SD",
+    "Illinois": "IL",
+    "Wisconsin": "WI",
+    "Minnesota": "MN",
+    "Iowa": "IA",
+    "Michigan": "MI",
+    "Indiana": "IN",
+    "West Virginia": "WV",
+    "Pennsylvania West": "PA(W)",
+    "Pennsylvania East": "PA(E)",
+    "Maryland": "MD",
+    "Delaware": "DE",
+    "District of Columbia": "DC",
+    "Virginia": "VA",
+    "North Carolina": "NC",
+    "South Carolina": "SC",
+    "Tennessee": "TN",
+    "Kentucky": "KY",
+    "Georgia": "GA",
+    "Alabama": "AL",
+    "Mississippi": "MS",
+    "Florida": "FL",
+    "Vermont": "VT",
+    "New Hampshire": "NH",
+    "Connecticut": "CT",
+    "Massachusetts": "MA",
+    "New Jersey": "NJ",
+    "Rhode Island": "RI",
+};
+
 // Extract states GeoJSON features
 const states = dividedData as unknown as FeatureCollection<Geometry, GeoJsonProperties>;
 
@@ -166,6 +226,9 @@ svg.append("g")
         const salesRepContact = d.properties.salesRepContact;
         const salesRepNum = d.properties.salesRepNum;
 
+        //Get the state abbreviation
+        const stateAbbreviation = stateAbbreviations[currentStateName] || currentStateName;
+
         // Territory Highlighting (using groupedBySalesRep)
         if (salesRep && groupedBySalesRep[salesRep]) {
             groupedBySalesRep[salesRep].territories.forEach((territory) => {
@@ -176,9 +239,8 @@ svg.append("g")
             // Tooltip Content (using groupedBySalesRep)
             tooltip.transition().duration(200).style("opacity", 0.9);
             tooltip.html(
-                `<strong>${salesRep}</strong><br>
-                ${salesRepContact}<br>
-                ${salesRepNum}`
+                `<strong>${stateAbbreviation}</strong><br>
+                 <strong>${salesRep}</strong><br>`
             ).style("left", `${event.pageX + 10}px`).style("top", `${event.pageY - 20}px`);
         } else {
             // Handle cases where there is no sales rep data
