@@ -6,7 +6,7 @@
     "build": "tsc",
     "dev": "tsc -w",
     "start": "parcel index.html",
-    "build-parcel": "parcel build index.html"
+    "build-parcel": "parcel build index.html --public-url ./"
   },
   "keywords": [],
   "author": "",
