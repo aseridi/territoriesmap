@@ -853,7 +853,7 @@ Object.keys(groupedBySalesRep).forEach((salesRep)=>{
     });
 });
 
-},{"d3":"17XFv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./data/dividedfile.json":"6Ti51"}],"17XFv":[function(require,module,exports,__globalThis) {
+},{"d3":"17XFv","./data/dividedfile.json":"6Ti51","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"17XFv":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _d3Array = require("d3-array");

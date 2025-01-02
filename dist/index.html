@@ -6,7 +6,7 @@
     <title>U.S. Sales Territories</title>
     <style>body {
   color: #303642;
-  background: #f0e2d8;
+  background: linear-gradient(135deg, #f0e2d8, #f8f4f0);
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
@@ -32,13 +32,13 @@ header {
   color: #f0e2d8;
   text-align: center;
   z-index: 1000;
-  background: #303642;
+  background: linear-gradient(100deg, #303642, #05162e);
   width: 100%;
-  padding: 30px 0;
+  padding: 40px 0;
   animation: 1s ease-out slideIn;
   position: sticky;
   top: 0;
-  box-shadow: 0 4px 12px #0003;
+  box-shadow: 0 4px 12px #0000004d;
 }
 
 @keyframes slideIn {
@@ -54,37 +54,37 @@ header {
 }
 
 header h1 {
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-shadow: 2px 4px 8px #0006;
   margin: 0;
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
 }
 
 header p {
-  color: #f0e2d8d9;
-  margin-top: 10px;
-  font-size: 1.4rem;
+  color: #f0e2d8e6;
+  margin-top: 15px;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
 #map {
   background: #fff;
   border: 2px solid #303642;
-  border-radius: 20px;
-  width: 85%;
-  max-width: 960px;
-  height: 600px;
-  margin: 50px 0;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 1000px;
+  height: 650px;
+  margin: 60px 0;
   transition: transform .4s, box-shadow .4s;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 12px 36px #0003;
+  box-shadow: 0 12px 36px #00000040;
 }
 
 #map:hover {
   transform: scale(1.03);
-  box-shadow: 0 16px 48px #0000004d;
+  box-shadow: 0 16px 48px #00000059;
 }
 
 .tooltip {
@@ -94,27 +94,27 @@ header p {
   pointer-events: none;
   background: #fff;
   border: 1px solid #303642;
-  border-radius: 10px;
-  padding: 15px;
-  font-size: 1rem;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 1.1rem;
   transition: opacity .3s, transform .3s;
   position: absolute;
-  box-shadow: 0 8px 24px #0003;
+  box-shadow: 0 8px 24px #00000040;
 }
 
 #sales-reps {
   background: #fff;
   border-top: 2px solid #303642;
-  border-radius: 25px 25px 0 0;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  border-radius: 30px 30px 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
   width: 100%;
   max-width: 1200px;
-  margin-top: 40px;
-  padding: 40px;
+  margin-top: 60px;
+  padding: 50px;
   animation: .8s ease-in-out slideUp;
   display: grid;
-  box-shadow: 0 -6px 18px #0000001a;
+  box-shadow: 0 -6px 18px #00000026;
 }
 
 @keyframes slideUp {
@@ -134,11 +134,11 @@ header p {
   cursor: pointer;
   background: #fff;
   border: 2px solid #303642;
-  border-radius: 15px;
-  padding: 30px;
+  border-radius: 20px;
+  padding: 35px;
   transition: transform .3s, box-shadow .3s, background-color .3s, border .3s;
   animation: .5s ease-in-out popIn;
-  box-shadow: 0 8px 16px #0000001a;
+  box-shadow: 0 8px 16px #00000026;
 }
 
 @keyframes popIn {
@@ -156,7 +156,7 @@ header p {
 .tile:hover {
   background: #f0e2d8;
   transform: translateY(-10px)scale(1.02);
-  box-shadow: 0 16px 32px #0003;
+  box-shadow: 0 16px 32px #00000040;
 }
 
 .tile.active {
@@ -164,7 +164,7 @@ header p {
   background: #25ade5;
   border-color: #25ade5;
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px #0000004d;
+  box-shadow: 0 16px 32px #00000059;
 }
 
 .tile.highlighted {
@@ -174,16 +174,16 @@ header p {
 }
 
 .tile h3 {
-  margin: 0 0 15px;
-  font-size: 1.7rem;
-  font-weight: 600;
+  margin: 0 0 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
 .tile p {
   color: #303642;
   margin: 10px 0;
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .tile.active p {
@@ -192,30 +192,30 @@ header p {
 
 @media (width <= 768px) {
   #map {
-    height: 400px;
+    height: 450px;
   }
 
   #sales-reps {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 30px;
   }
 
   header h1 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 
   header p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
 @media (width <= 480px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 </style>
