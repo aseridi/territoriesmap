@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import dividedData from "../data/dividedfile.json";
+import dividedData from "./data/dividedfile.json";
 // Extract states GeoJSON features
 const states = dividedData;
 // Mapping object for sales reps and their contact details
